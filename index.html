@@ -1,35 +1,155 @@
 <!DOCTYPE HTML>
   <html>
     <head>
-      <title>Allysson Guedes</title>
+      <title>PDO in a nutshell</title>
+      <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
       <style>
         body{
           margin: 0;
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           grid-auto-rows: min-content;
+          font-family: 'Mina', sans-serif;
         }
         .lateral{
-          grid-column: 1 / 3;
+          grid-column: 1 / 4;
+          background: #076645;
+          color: #FFF;
         }
         .conteudo{
-          grid-column: 3 / -1;
+          grid-column: 4 / -1;
+        }
+        .section{
+          padding: 10px;
+        }
+        .section p{
+          text-align: justify;
+          font-size: 16px;
+        }
+        .section p::first-letter{
+          font-size: 22px;
         }
         .rodape{
           grid-column: 1 / -1;
+        }
+        .lista{
+          list-style-type: none;
+          padding: 0;
+          position: fixed;
+          top: 0;
+        }
+        .lista li{
+          padding: 10px 10px;
+        }
+        .lista li a{
+          text-decoration: none;
+          color: #FFF;
+          text-align: left;
         }
       </style>
     </head>
     <body>
       <div class="lateral">
-        <ul class="lista">
-          <li><a href="#Intro"> Introdução </a></li>
-          <li><a href="#Conexao"> Conexão com Banco de Dados </a></li>
-        </ul>
+        <div class="lateral_wrapper">
+          <div class="logo">
+            
+          </div>
+          <ul class="lista">
+            <li><a href="#Intro"> Introdução </a></li>
+            <li><a href="#Conexao"> Conexão com Banco de Dados </a></li>
+            <li><a href="#select"> SELECT </a></li>
+            <li><a href="#Resultados"> Contando e Manipulando Resultados </a></li>
+            <li><a href="#Insert"> INSERT, DELETE & UPDATE </a></li>
+          </ul>
+        </div>
       </div>
       <div class="conteudo">
-        <section class="section">
+        <section class="section" id="Intro">
+          <h1>Introdução</h1>
           <p>
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
+          </p>
+        </section>
+        <section class="section" id="Conexao">
+          <h1>Conexão com Banco de Dados</h1>
+          <p>
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
+          </p>
+        </section>
+        <section class="section" id="Select">
+          <h1> SELECT </h1>
+          <p>
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
+          </p>
+        </section>
+        <section class="section" id="Resultados">
+          <h1>Contando e Manipulando Resultados</h1>
+          <p>
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
+          </p>
+        </section>
+        <section class="section" id="Insert">
+          <h1>INSERT, DELETE & UPDATE</h1>
+          <p>
+            Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
+            Así que teníamos que triangular las señales usando recursos en tierra. Y cuando tenías cobertura,no sabías a quién oías. Alguien en mi organización a la que dio el valor en la calle de mi cocaína. De lo contrario , ¿cómo saber ?.
+            Porque Dios no ha hecho nada que ver con it.It fue que, Nick. Es necessario su intervención que tiene esas personas muertas . Eres tan culpable como yo. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Liberar a Columbia .
+            Compremos una lavadora más grande, pues.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
+            ¿Plata o plomo? Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Ya no queda nadie que se nos enfrente. ¿Y sabes por qué, Fabito? Porque nadie tiene los huevos como nosotros.
             Yo ayudaré porque vengo de orígenes pobres. Te voy a dar un millón de dólares. Su mal parido.
             Así que teníamos que triangular las señales usando recursos en tierra.  La cárcel em Estados Unidos es peor que la muerte. La gente lo olvida, pero 47 millones de estadounidenses votaron por Nixon.
             Compremos una lavadora más grande, pues. Yo no quiero ser bueno. Voy a ser grande. No soy una persona rica. Soy pobre persona con dinero. Su mal parido.
